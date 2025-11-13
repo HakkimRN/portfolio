@@ -1,18 +1,19 @@
 import React from "react";
-import { createBrowserRouter } from "react-router-dom";
-import { RouterProvider } from "react-router-dom";
-import AppLayout from "./AppLayout";
+import Sidebar from "./SideBar";
 
 const Body = () => {
-  const appRouter = createBrowserRouter([
-    {
-      path: "/",
-      element: <AppLayout />,
-    },
-  ]);
   return (
     <>
-      <RouterProvider router={appRouter}/>
+      <div className="body">
+        <h3>Hakkim Rustom Naina</h3>
+        <h4>Frontend Developer</h4>
+        <button>Check Out My Projects!</button>
+      </div>
+      <div>
+        <button>
+          <Sidebar />
+        </button>
+      </div>
     </>
   );
 };
