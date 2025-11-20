@@ -1,21 +1,14 @@
 import React from "react";
-import Sidebar from "./SideBar";
+import { Routes, Route } from "react-router-dom";
+import About from "./About";
 
 const Body = () => {
   return (
-    <>
-      <div className="body">
-        <h3>Hakkim Rustom Naina</h3>
-        <h4>Frontend Developer</h4>
-        <button>Check Out My Projects!</button>
-      </div>
-      <div>
-        <button>
-          <Sidebar />
-        </button>
-      </div>
-    </>
+    <Routes>
+      <Route path="/" element={<About />} />
+    </Routes>
   );
 };
 
 export default Body;
+

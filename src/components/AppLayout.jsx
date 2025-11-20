@@ -1,14 +1,14 @@
 import React from 'react'
 import Header from './Header'
 import Body from './Body'
-
+import Sidebar from './SideBar'
 
 const AppLayout = () => {
   return (
-    <div>
-      <Header/>
-      <Body/>
-    </div>
+    <>
+     <Header/>
+     <Body/>
+    </>
   )
 }
 

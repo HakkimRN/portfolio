@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
+import Sidebar from "./SideBar";
 
-function About() {
+const About = () => {
   return (
-    <div>About</div>
-  )
-}
+    <>
+      <div className="body">
+        <h3>?My name</h3>
+        <h4>Frontend Developer</h4>
+        <button>Check Out My Projects!</button>
+      </div>
+      <div>
+        <Sidebar/>
+      </div>
+    </>
+  );
+};
 
-export default About
+export default About;
