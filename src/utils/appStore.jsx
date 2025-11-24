@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import aboutReducer from "./aboutSlice"
+import uiReducer from "./uiSlice"
 
 const appStore = configureStore({
     reducer:{
-        about: aboutReducer,
+        ui: uiReducer,
     },
 });
 

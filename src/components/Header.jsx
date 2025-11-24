@@ -1,21 +1,15 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleAboutPage } from "../utils/aboutSlice";
-import About from "./About";
+import { useDispatch } from "react-redux";
+import { setPage } from "../utils/uiSlice";
 
 const Header = () => {
-  const dispatch = useDispatch();
-  const showAboutPage = useSelector((store) => store.about.showAboutPage);
-  const handleAboutPage = () => {
-    dispatch(toggleAboutPage());
-  }
+  const dispatch = useDispatch()
 
   return (
     <>
-      <button onClick={handleAboutPage}>About</button>
-      <button>Projects</button>
+      <button onClick={()=> dispatch(setPage("about"))}>About</button>
+      <button onClick={()=> dispatch(setPage("projects"))}>Projects</button>
       <button>Resume</button>
-      {showAboutPage && <About/>}
     </>
   );
 };
