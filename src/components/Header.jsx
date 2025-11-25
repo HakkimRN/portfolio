@@ -1,16 +1,14 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { setPage } from "../utils/uiSlice";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  const dispatch = useDispatch()
 
   return (
-    <>
-      <button onClick={()=> dispatch(setPage("about"))}>About</button>
-      <button onClick={()=> dispatch(setPage("projects"))}>Projects</button>
-      <button>Resume</button>
-    </>
+    <nav>
+      <button><Link to="/">About</Link></button>
+      <button><Link to="/projects">Projects</Link></button>
+      <button><Link to="/resume">Resume</Link></button>
+    </nav>
   );
 };
 

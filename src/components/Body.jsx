@@ -1,17 +1,16 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import About from "./About"
-import Projects from "./Projects"
-
+import About from "./About";
+import Projects from "./Projects";
+import Resume from "./Resume";
+import { Route, Routes } from "react-router-dom";
 
 const Body = () => {
-  const currentPage = useSelector((store)=>store.ui.currentPage);
-
   return (
-    <>
-    {currentPage == "about" && <About/>}
-    {currentPage == "projects" && <Projects/>}
-    </>
+      <Routes>
+        <Route path="/" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/resume" element={<Resume />} />
+      </Routes>
   );
 };
 
