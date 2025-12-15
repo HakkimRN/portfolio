@@ -1,6 +1,15 @@
 body {
-    background: #2E3D32;
+    /* background: ; */
+    background: #1A1A1A;
+    overflow-x: hidden;
 }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 
 .body {
     text-align: center;
@@ -8,12 +17,37 @@ body {
 }
 
 .body h3 {
-    font-size: 1.8rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #A3B18A;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .body h4 {
-    font-size: 1.2rem;
-    color: #666;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #DAD7CD;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+
+.body p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  color: #DAD7CD;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.body p.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .sidebar {
@@ -21,15 +55,14 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    background-color: #588157;
-    width: 35px;
+    margin-top: 100%;
     border-radius: 10px;
 }
 
 .sidebar a {
     text-decoration: none;
-    /* color: #333; */
     font-weight: bold;
+    position: relative;
 }
 
 .sidebar a:hover {
@@ -39,9 +72,12 @@ body {
 
 .sidebar a::after {
     content: attr(data-label);
+    font-size: 0.7rem;
     position: absolute;
-    left: 120%;
-    top: 20%;
+    left: 50%;
+    top: -25%;
+    transform: translateX(-50%);
+    white-space: normal;
     background: #A3B18A;
     color: #1A1A1A;
     padding: 0.25rem 0.5rem;
@@ -54,9 +90,18 @@ body {
     opacity: 1;
 }
 
+.sidebar-nav {
+    width: 4.375rem;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: #2E3D32;
+}
+
 .logo {
-    width: 30px;
-    padding: 8px;
+    width: 3.5rem;
+    padding: 1rem;
 }
 
 .button {
@@ -98,6 +143,7 @@ body {
 
 .nav {
     display: flex;
+    background-color: #2E3D32;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
@@ -117,6 +163,10 @@ body {
         margin-bottom: 0.5rem;
     }
 
+    .body {
+        text-align: center;
+    }
+
     .body h3 {
         font-size: 1.5rem;
     }
@@ -125,13 +175,20 @@ body {
         font-size: 1rem;
     }
 
+    .sidebar-nav {
+        width: auto;
+        height: auto;
+        background: none;
+        position: static;
+    }
+
     .sidebar {
         flex-direction: row;
         justify-content: center;
         position: fixed;
         bottom: 0;
         width: 100%;
-        background: #2E3D32;
+        background: #1A1A1A;
         padding: 0.5rem;
     }
 }
