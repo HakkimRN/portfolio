@@ -16,8 +16,8 @@ const About = () => {
   return (
     <>
       <div className="body">
-        <h3 className={step >= 1 ? "show" : ""}>Hey, I'm Hakkim Naina</h3>
-        <h4 className={step >= 2 ? "show" : ""}>A Frontend Developer</h4>
+        <h3 className={step >= 1 ? "show" : ""}>Hakkim Naina</h3>
+        <h4 className={step >= 2 ? "show" : ""}>Frontend Developer</h4>
         <p className={step >= 3 ? "show" : ""}>
           I develop modern frontend experiences with clean structure, smooth
           transitions, and attention to real-world use. I focus on clarity,

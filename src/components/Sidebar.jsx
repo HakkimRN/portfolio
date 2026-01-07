@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import GITHUB_URL from "../assets/github-mark.png";
-import LINKEDIN_URL from "../assets/inBug-Black.png";
+import GITHUB_URL from "../assets/github-mark-white.png";
+import LINKEDIN_URL from "../assets/inBug-White.png";
 import FIVERR_URL from "../assets/FVRR_BIG.D.svg";
 
 const Sidebar = () => {
