@@ -16,15 +16,19 @@ const About = () => {
   return (
     <>
       <div className="body">
-        <h3 className={step >= 1 ? "show" : ""}>Hakkim Naina</h3>
-        <h4 className={step >= 2 ? "show" : ""}>Frontend Developer</h4>
+        <span className={step >= 1 ? "show" : ""}>Hey,</span>
+        <h3 className={step >= 2 ? "show" : ""}>I'm Hakkim Naina</h3>
         <p className={step >= 3 ? "show" : ""}>
-          I develop modern frontend experiences with clean structure, smooth
-          transitions, and attention to real-world use. I focus on clarity,
-          accessibility, and details that make interfaces easier to work with.
+          A React-based frontend developer passionate about building accessible,
+          user-friendly websites and web applications, with a focus on the small
+          details that make interfaces easier to use.
         </p>
-        <Link className={`about-button ${step >= 4 ? "show" : ""}`} to="/projects" draggable="false">
-          <span className="btn-text">Check Out My Projects </span>➜
+        <Link
+          className={`about-button ${step >= 4 ? "show" : ""}`}
+          to="/projects"
+          draggable="false"
+        >
+          <i className="btn-text">Check Out My Projects </i>➜
         </Link>
       </div>
     </>

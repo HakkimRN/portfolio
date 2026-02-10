@@ -10,9 +10,6 @@ const Header = () => {
       <NavLink className="button" to="/projects" draggable="false">
         Projects
       </NavLink>
-      <NavLink className="button" to="/resume" draggable="false">
-        Resume
-      </NavLink>
     </nav>
   );
 };

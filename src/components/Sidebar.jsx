@@ -15,7 +15,7 @@ const Sidebar = () => {
            <Link to="" data-label="Fiverr">
             <img className="logo" src={FIVERR_URL} />
           </Link>
-          <Link to="www.linkedin.com/in/hakkim-rustom-naina-516051256" data-label="LinkedIn">
+          <Link to="https://www.linkedin.com/in/hakkim-rustom-naina-516051256" data-label="LinkedIn">
             <img className="logo" src={LINKEDIN_URL} />
           </Link>
          

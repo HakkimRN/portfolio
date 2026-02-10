@@ -12,11 +12,11 @@ body {
 .body {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     color: color(display-p3 0.992 0.993 0.977);
-    margin-top: 10rem;
-    padding-left: 7rem;
+    margin-top: 1rem;
+    padding-left: 1rem;
     perspective: 800px;
 }
 
@@ -24,7 +24,7 @@ body {
     font-size: 4rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
     text-align: center;
     opacity: 0;
     transform: translateX(-10px);
@@ -39,7 +39,7 @@ body {
 .body h4 {
     font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-align: center;
     opacity: 0;
     transform: translateX(10px);
@@ -51,12 +51,29 @@ body {
     transform: translateX(0);
 }
 
+.body span {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.body span.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 .body p {
     font-size: 1.24rem;
     line-height: 1.6;
     max-width: 600px;
-    margin: 0.5rem 0;
-    text-align: left;
+    margin: 1rem 0;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.6s ease, transform 0.6s ease;
@@ -67,15 +84,35 @@ body {
     transform: translateY(0);
 }
 
+
+.nav {
+    display: flex;
+    background-color: color(display-p3 0.425 0.188 0.618);
+    border-bottom: 1px solid color(display-p3 0.992 0.993 0.977);
+    border-radius: 15px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    align-items: center;
+}
+
 .sidebar {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    position: fixed;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
-    margin-top:91%;
-    padding-top: 15.57rem;
-    border-right: 1px solid color(display-p3 0.992 0.993 0.977);
-    border-radius: 15px 0px;
+    bottom: 0;
+    /* ma */
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    /* padding-top: 15.57rem; */
+    border-top: 1px solid color(display-p3 0.992 0.993 0.977);
+    border-radius: 15px;
 }
 
 .sidebar a {
@@ -112,7 +149,6 @@ body {
 .sidebar-nav {
     width: 4.375rem;
     position: fixed;
-    height: 100vh;
     left: 0;
     top: 0;
     background: color(display-p3 0.425 0.188 0.618);
@@ -126,7 +162,7 @@ body {
 .button {
     background-color: color(display-p3 0.425 0.188 0.618);
     color: #E0E0E0;
-    width: auto;
+    width: 90%;
     max-width: 12.5rem;
     line-height: 40px;
     padding: 0.2rem 1.25rem;
@@ -198,7 +234,7 @@ body {
     margin-left: 0.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    transform: translateZ(10px) scale(1.05) translateY(-3px);
+    transform: translateZ(10px) scale(1.05) translateX(-3px);
 }
 
 .about-button.active {
@@ -213,16 +249,38 @@ body {
     transform: translateX(0);
 }
 
-.nav {
+
+
+.carousel {
     display: flex;
-    background-color: color(display-p3 0.425 0.188 0.618);
-    border-bottom: 1px solid color(display-p3 0.992 0.993 0.977);
-    border-radius: 15px;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
     align-items: center;
+}
+
+ul {
+    width: 100vw;
+    height: 300px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+li {
+    list-style-type: none;
+    background-color: #eeeeee;
+    border: 1px solid #dddddd;
+    padding: 20px;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+}
+
+li:nth-child(even) {
+    background-color: cyan;
 }
 
 @media (max-width: 61.625rem) {
@@ -243,14 +301,15 @@ body {
         text-align: left;
         padding-bottom: 5rem;
         padding-left: 1rem;
+        margin-top: 6rem;
     }
 
     .body h3 {
-        font-size: 1.5rem;
+        font-size: 3rem;
     }
 
     .body h4 {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     .sidebar-nav {
@@ -258,16 +317,6 @@ body {
         height: auto;
         background: none;
         position: relative;
-    }
 
-    .sidebar {
-        flex-direction: row;
-        justify-content: center;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        height: 8%;
-        background: #194a7a;
-        padding: 0.5rem;
     }
 }
