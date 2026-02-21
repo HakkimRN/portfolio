@@ -14,7 +14,7 @@ const About = () => {
   }, []);
 
   return (
-    <>
+    <nav>
       <div className="body">
         <span className={step >= 1 ? "show" : ""}>Hey,</span>
         <h3 className={step >= 2 ? "show" : ""}>I'm Hakkim Naina</h3>
@@ -31,7 +31,7 @@ const About = () => {
           <i className="btn-text">Check Out My Projects </i>➜
         </Link>
       </div>
-    </>
+    </nav>
   );
 };
 

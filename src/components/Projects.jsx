@@ -14,6 +14,9 @@ const Projects = () => {
         <li>
           <h1>3</h1>
         </li>
+        <li>
+          <h1>4</h1>
+        </li>
       </ul>
     </nav>
   );
