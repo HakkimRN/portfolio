@@ -9,16 +9,30 @@ const Sidebar = () => {
     <>
       <nav className="sidebar-nav">
         <div className="sidebar">
-          <Link  to="https://github.com/HakkimRN" data-label="Github">
-            <img className="logo" src={GITHUB_URL} />
+          <Link to="https://github.com/HakkimRN" data-label="Github">
+            <img
+              className="logo"
+              src={GITHUB_URL}
+              aria-label="Github Profile"
+            />
           </Link>
-           <Link to="" data-label="Fiverr">
-            <img className="logo" src={FIVERR_URL} />
+          <Link to="" data-label="Fiverr">
+            <img
+              className="logo"
+              src={FIVERR_URL}
+              aria-label="Fiverr Profile"
+            />
           </Link>
-          <Link to="https://www.linkedin.com/in/hakkim-rustom-naina-516051256" data-label="LinkedIn">
-            <img className="logo" src={LINKEDIN_URL} />
+          <Link
+            to="https://www.linkedin.com/in/hakkim-rustom-naina-516051256"
+            data-label="LinkedIn"
+          >
+            <img
+              className="logo"
+              src={LINKEDIN_URL}
+              aria-label="Linkedin Profile"
+            />
           </Link>
-         
         </div>
       </nav>
     </>
