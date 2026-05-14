@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import GITHUB_URL from "../assets/github-mark-white.png";
 import LINKEDIN_URL from "../assets/inBug-White.png";
-import FIVERR_URL from "../assets/FVRR_BIG.D.svg";
 
 const Sidebar = () => {
   return (
@@ -14,13 +13,6 @@ const Sidebar = () => {
               className="logo"
               src={GITHUB_URL}
               aria-label="Github Profile"
-            />
-          </Link>
-          <Link to="" data-label="Fiverr">
-            <img
-              className="logo"
-              src={FIVERR_URL}
-              aria-label="Fiverr Profile"
             />
           </Link>
           <Link
