@@ -2,8 +2,8 @@ body {
     background-color: (display-p3 0.357 0.125 0.404);
     background-color: #5b2067;
     overflow-x: hidden;
-    min-height: 100vh;
-    padding-bottom: 15vh;
+    min-height: 50px;
+    padding-bottom: var(--sidebar-h);
 }
 
 *,
@@ -14,6 +14,11 @@ body {
     padding: 0;
 }
 
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: normal;
+}
+
 .body {
     display: flex;
     flex-direction: column;
@@ -22,7 +27,7 @@ body {
     color: color(display-p3 0.992 0.993 0.977);
     margin-top: 1rem;
     padding-left: 1rem;
-    padding-bottom: 6rem;
+    padding-bottom: 0;
     perspective: 800px;
 }
 
@@ -38,6 +43,17 @@ body {
 }
 
 .body h3.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-content {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.page-content.show {
     opacity: 1;
     transform: translateY(0);
 }
@@ -103,6 +119,10 @@ body {
     align-items: center;
 }
 
+:root {
+    --sidebar-h: 5rem;
+}
+
 .sidebar {
     display: flex;
     flex-direction: row;
@@ -112,7 +132,7 @@ body {
     gap: 1rem;
     bottom: 0;
     width: 100%;
-    height: 15%;
+    height: var(--sidebar-h);
     min-height: 40px;
     background: color(display-p3 0.357 0.125 0.404);
     border-top: 1px solid color(display-p3 0.992 0.993 0.977);
@@ -163,33 +183,39 @@ body {
     padding: 1rem;
 }
 
+.keen-slider {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+
 .keen-slider__slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    height: 300px;
-    padding: 0.5rem;
+    opacity: 0.5;
+    transition: opacity 0.4s ease;
+}
+
+.keen-slider__slide.active {
+    opacity: 1;
 }
 
 .keen-slider__slide img {
     width: 100%;
     height: auto;
-    margin: 1rem auto;
     display: block;
     object-fit: cover;
-    border-radius: 1.5rem;
-    padding: 0.5rem;
-    transition: transform 0.5s ease;
-    transform-origin: center center;
+    border-radius: 1rem;
 }
 
 .keen-slider__slide img:hover {
-    transform: scale(1.05);
     cursor: pointer;
 }
 
 .button {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: normal;
     background-color: color(display-p3 0.357 0.125 0.404);
     color: #E0E0E0;
     width: 90%;
@@ -236,6 +262,9 @@ body {
 }
 
 .about-button {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: normal;
+    /* add this too just in case */
     color: #E0E0E0;
     max-width: 12.7rem;
     line-height: 1.563rem;
@@ -304,7 +333,7 @@ body {
     margin: 1rem auto;
     padding: .5rem;
     border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     color: color(display-p3 0.992 0.993 0.977);
 }
 
@@ -318,7 +347,56 @@ body {
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+.project-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 1rem;
+    opacity: 0.9;
+}
+
+.project-links {
+    color: #E0E0E0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.project-link {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #E0E0E0;
+    padding: 0.4rem 1rem;
+    border-radius: 15px;
+    border: 1px solid color(display-p3 0.992 0.993 0.977);
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: color(display-p3 0.992 0.993 0.977);
+    color: color(display-p3 0.425 0.188 0.618);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 @media (max-width: 61.625rem) {
+
     .nav {
         flex-direction: column;
         align-items: center;
@@ -341,11 +419,18 @@ body {
     }
 
     .sidebar {
-        height: 5rem;
+        height: var(--sidebar-h);
     }
 
     .carousel-announcer {
         font-size: 0.55rem;
         width: 50%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
     }
 }
