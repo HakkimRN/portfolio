@@ -9,6 +9,7 @@ const About = () => {
       setTimeout(() => setStep(2), 300),
       setTimeout(() => setStep(3), 600),
       setTimeout(() => setStep(4), 900),
+      setTimeout(() => setStep(5), 1100),
     ];
     return () => timer.forEach(clearTimeout);
   }, []);
@@ -23,8 +24,17 @@ const About = () => {
           user-friendly websites and web applications, with a focus on the small
           details that make interfaces easier to use.
         </p>
+        <div
+          className={`tech-stack ${step >= 4 ? "show" : ""}`}
+          aria-label="Tech stack"
+          role="list"
+        >
+          {["React", "Redux", "JavaScript", "HTML", "CSS", "REST APIs", "Responsive Design", "Accessible Design"].map((tech) => (
+            <span key={tech} className="tech-badge" role="listitem">{tech}</span>
+          ))}
+        </div>
         <Link
-          className={`about-button ${step >= 4 ? "show" : ""}`}
+          className={`about-button ${step >= 5 ? "show" : ""}`}
           to="/projects"
           draggable="false"
         >

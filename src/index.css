@@ -73,7 +73,7 @@ body {
     transform: translateX(0);
 }
 
-.body span {
+.body > span {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
@@ -83,7 +83,7 @@ body {
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.body span.show {
+.body > span.show {
     opacity: 1;
     transform: translateX(0);
 }
@@ -117,6 +117,36 @@ body {
     gap: 0.5rem;
     padding: 0.5rem;
     align-items: center;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 1rem 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.tech-stack.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tech-badge {
+    background: transparent;
+    color: color(display-p3 0.992 0.993 0.977);
+    border: 1px solid color(display-p3 0.992 0.993 0.977);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.tech-badge:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
 }
 
 :root {
